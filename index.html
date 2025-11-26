@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">PokéDex - The Ultimate Pokémon Encyclopedia</title>
+    <meta name="description"
+        content="Explore comprehensive Pokémon information including stats, moves, evolutions, and fascinating facts from every generation.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text" data-i18n="app-title">PokéDex</span>
+            </h1>
+            <div class="header-actions">
+                <div class="search-container">
+                    <input type="text" id="searchInput" class="search-input" data-i18n-placeholder="search-placeholder"
+                        placeholder="Search Pokémon by name or number...">
+                    <button class="search-clear-btn" id="searchClearBtn" style="display: none;" title="Clear search">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                    <button class="search-btn" id="searchBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                    </button>
+                </div>
+                <button class="lang-toggle" id="langToggle" title="Switch Language / 切换语言">
+                    <span class="lang-icon">🌐</span>
+                    <span class="lang-text" id="langText">中文</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Generation Filter Section -->
+            <div class="generation-section">
+                <h2 class="section-subtitle" data-i18n="filter-by-gen">Filter by Generation</h2>
+                <div class="generation-filter">
+                    <button class="gen-btn active" data-gen="all" data-i18n="gen-all">All Generations</button>
+                    <button class="gen-btn" data-gen="1" data-i18n="gen-1">Gen I (Kanto)</button>
+                    <button class="gen-btn" data-gen="2" data-i18n="gen-2">Gen II (Johto)</button>
+                    <button class="gen-btn" data-gen="3" data-i18n="gen-3">Gen III (Hoenn)</button>
+                    <button class="gen-btn" data-gen="4" data-i18n="gen-4">Gen IV (Sinnoh)</button>
+                    <button class="gen-btn" data-gen="5" data-i18n="gen-5">Gen V (Unova)</button>
+                    <button class="gen-btn" data-gen="6" data-i18n="gen-6">Gen VI (Kalos)</button>
+                    <button class="gen-btn" data-gen="7" data-i18n="gen-7">Gen VII (Alola)</button>
+                    <button class="gen-btn" data-gen="8" data-i18n="gen-8">Gen VIII (Galar)</button>
+                    <button class="gen-btn" data-gen="9" data-i18n="gen-9">Gen IX (Paldea)</button>
+                </div>
+                <div class="special-filters">
+                    <button class="special-filter-btn" id="legendaryFilter" data-i18n="filter-legendary">
+                        <span class="filter-icon">⭐</span> Legendary/Mythical Only
+                    </button>
+                </div>
+            </div>
+
+            <!-- Filter Section -->
+            <div class="type-filter-section">
+                <h2 class="section-subtitle" data-i18n="filter-by-type">Filter by Type</h2>
+                <div class="filter-section">
+                    <button class="filter-btn active" data-type="all" data-i18n="type-all">All Types</button>
+                    <button class="filter-btn" data-type="normal" data-i18n="type-normal">Normal</button>
+                    <button class="filter-btn" data-type="fire" data-i18n="type-fire">Fire</button>
+                    <button class="filter-btn" data-type="water" data-i18n="type-water">Water</button>
+                    <button class="filter-btn" data-type="electric" data-i18n="type-electric">Electric</button>
+                    <button class="filter-btn" data-type="grass" data-i18n="type-grass">Grass</button>
+                    <button class="filter-btn" data-type="ice" data-i18n="type-ice">Ice</button>
+                    <button class="filter-btn" data-type="fighting" data-i18n="type-fighting">Fighting</button>
+                    <button class="filter-btn" data-type="poison" data-i18n="type-poison">Poison</button>
+                    <button class="filter-btn" data-type="ground" data-i18n="type-ground">Ground</button>
+                    <button class="filter-btn" data-type="flying" data-i18n="type-flying">Flying</button>
+                    <button class="filter-btn" data-type="psychic" data-i18n="type-psychic">Psychic</button>
+                    <button class="filter-btn" data-type="bug" data-i18n="type-bug">Bug</button>
+                    <button class="filter-btn" data-type="rock" data-i18n="type-rock">Rock</button>
+                    <button class="filter-btn" data-type="ghost" data-i18n="type-ghost">Ghost</button>
+                    <button class="filter-btn" data-type="dragon" data-i18n="type-dragon">Dragon</button>
+                    <button class="filter-btn" data-type="dark" data-i18n="type-dark">Dark</button>
+                    <button class="filter-btn" data-type="steel" data-i18n="type-steel">Steel</button>
+                    <button class="filter-btn" data-type="fairy" data-i18n="type-fairy">Fairy</button>
+                </div>
+            </div>
+
+            <!-- Pokemon Grid -->
+            <div id="pokemonGrid" class="pokemon-grid">
+                <!-- Loading State -->
+                <div class="loading">
+                    <div class="pokeball-loader"></div>
+                    <p data-i18n="loading">Loading Pokémon...</p>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="load-more-container">
+                <button id="loadMoreBtn" class="load-more-btn" data-i18n="load-more" style="display: none;">Load
+                    More
+                    Pokémon</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Pokemon Detail Modal -->
+    <div id="pokemonModal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+
+            <div id="modalBody" class="modal-body">
+                <!-- Content will be dynamically loaded -->
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
